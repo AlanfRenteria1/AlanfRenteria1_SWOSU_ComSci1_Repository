@@ -24,8 +24,3 @@ def fast_beep():
 def sound_alarm():
     print(RED + "WEEEOOO WEEEOOO WEEEOOO" + RESET)
     time.sleep(0.5)
-
-
-def random_event():
-    if random.random() > 0.25:
-        return
