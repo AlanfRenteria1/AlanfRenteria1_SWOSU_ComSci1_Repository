@@ -1,3 +1,17 @@
+from core.ui import (
+    say,
+    beep
+)
+
+from core.constants import (
+    YELLOW,
+    RESET,
+    HEADER_ARCHIVES
+)
+
+from assets.ascii_art import (
+    TELEPORT_BEAM_ART
+)
 def show_cycle_number():
     cycle = random.randint(1, 999999)
 
