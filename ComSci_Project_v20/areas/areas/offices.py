@@ -201,3 +201,91 @@ def interact_printer():
         else:
             print(ERROR_CHOICE_5)
 
+def inspect_office_wall():
+    say("\nYou inspect the wall beside Cubicle 47.")
+    say("Something about it looks wrong.")
+    say("The paint does not quite meet the floor.")
+    say("From the correct angle, you can see a thin line of absolute nothing.")
+    return clip_through_wall()
+
+
+def clip_through_wall():
+    say("\nYou press your hand against the suspicious wall.")
+    say("Your hand passes straight through it.")
+    time.sleep(1)
+    say("That is probably not supposed to happen.")
+
+    while True:
+        print("\nWhat do you do?")
+        print("1 - Step through the wall")
+        print("2 - Back away")
+
+        choice = input(PROMPT_SELECTION).strip()
+
+        if choice == "1":
+            say("\nYou carefully step forward.")
+            say("For half a second, everything looks normal.")
+            fast_beep()
+            say_color("\n⚠ REALITY COLLISION ERROR ⚠", MAGENTA)
+            say("The office vanishes.")
+            say("The floor also vanishes.")
+            destination = random.choice(["backrooms", "wrong_place"])
+            if destination == "backrooms":
+                return "backrooms"
+            else:
+                return "wrong_place"
+        elif choice == "2":
+            say("\nYou pull your hand out of the wall.")
+            say("You decide that solid objects should remain solid.")
+            return "offices"
+        else:
+            print(ERROR_CHOICE_2)
+
+def visit_offices():
+    say("\nYou enter the Offices.")
+    say("The sudden normality is unsettling.")
+    say("Rows of gray cubicles stretch across the room.")
+    say("Computer monitors glow quietly on empty desks.")
+    say("There is a meeting area near the windows.")
+    say("A break area sits beneath a sign reading 'EMPLOYEE WELLNESS ZONE.'")
+    say("Nobody appears to be working.")
+
+    random_event()
+
+    if random.random() < 0.15:
+        say_color("\n✨ OFFICE ANOMALY DETECTED", MAGENTA)
+        say("A printer turns on by itself.")
+        say("It prints a single sheet of paper.")
+        say_color("STOP LOOKING AT ME.", YELLOW)
+
+    while True:
+        print("\nOffices")
+        print("────────")
+        print("1 - Explore the cubicles")
+        print("2 - Visit the meeting area")
+        print("3 - Visit the break area")
+        print("4 - Inspect a strange part of the wall")
+        print("5 - Interact with the printer")
+        print("6 - Return to the Exploration Wing")
+
+        choice = input(PROMPT_SELECTION).strip()
+
+        if choice == "1":
+            search_cubicles()
+        elif choice == "2":
+            visit_meeting_area()
+        elif choice == "3":
+            visit_break_area()
+        elif choice == "4":
+            result = inspect_office_wall()
+            if result == "backrooms":
+                return "backrooms"
+            elif result == "wrong_place":
+                return "wrong_place"
+        elif choice == "5":
+            interact_printer()
+        elif choice == "6":
+            say("\nYou leave the Offices.")
+            return "explore"
+        else:
+            print(ERROR_CHOICE_5)
