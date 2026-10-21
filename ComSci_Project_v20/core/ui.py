@@ -1,3 +1,6 @@
+import time
+
+from core.constants import RESET
 
 def say(text, delay=0.75):
     print(text)
