@@ -1,3 +1,11 @@
+import random
+
+from core.ui import say_color
+
+from core.constants import (
+    MAGENTA
+)
+
 def random_event():
     if random.random() > 0.25:
         return
