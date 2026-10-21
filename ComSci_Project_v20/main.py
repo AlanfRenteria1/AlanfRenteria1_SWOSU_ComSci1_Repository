@@ -1,5 +1,19 @@
-from core.constants import *
+from core.game_state import GameState
 
+from areas.archives import visit_archives
+from areas.maintenance import visit_maintenance
+from areas.offices import visit_offices
+from areas.squirrel import talk_to_squirrel
+
+from areas.special_rooms import (
+    enter_secret_room,
+    enter_nuke_room
+)
+
+from areas.glitch_spaces import (
+    visit_wrong_place,
+    enter_backrooms
+)
 def main():
     clear_screen()
     say_color("Welcome to the Temporal Calculation Facility!", YELLOW)
