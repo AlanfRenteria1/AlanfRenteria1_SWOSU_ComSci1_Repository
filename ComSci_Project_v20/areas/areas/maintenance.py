@@ -1,3 +1,19 @@
+from core.ui import (
+    say,
+    sound_alarm
+)
+
+from core.constants import *
+
+from assets.ascii_art import (
+    POWER_BOX_ART,
+    STEAM_PIPE_ART,
+    VAPURATION_WARNING_ART
+)
+
+from core.game_logic import (
+    game_over
+)
 def inspect_tool_wall():
     say("\n🔧 You approach a wall covered in maintenance tools.")
     say("Every tool has a label.")
