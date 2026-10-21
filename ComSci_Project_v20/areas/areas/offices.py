@@ -1,3 +1,10 @@
+from core.ui import *
+
+from core.constants import *
+
+from assets.ascii_art import (
+    MEETING_NOTES_ART
+)
 def search_cubicles():
     say("\n🖥 You wander through the rows of cubicles.")
     say("Every desk looks almost exactly the same.")
