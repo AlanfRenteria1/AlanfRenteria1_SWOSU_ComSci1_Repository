@@ -1,6 +1,3 @@
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
-
 
 def say(text, delay=0.75):
     print(text)
