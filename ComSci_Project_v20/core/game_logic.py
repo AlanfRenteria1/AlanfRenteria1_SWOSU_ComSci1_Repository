@@ -1,7 +1,7 @@
 # core/game_logic.py
 
-import sys
 import random
+import sys
 
 def game_over(message):
 
