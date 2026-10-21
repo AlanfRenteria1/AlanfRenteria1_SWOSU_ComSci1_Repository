@@ -1,3 +1,11 @@
+import datetime
+
+from assets.ascii_art import (
+    TEMPORAL_READOUT_ART
+)
+
+from core.ui import say
+
 def pull_lever():
     say("\nYou approach the Primary Lever.")
     say("It hums with temporal energy.")
