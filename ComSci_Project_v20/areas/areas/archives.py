@@ -12,6 +12,8 @@ from core.constants import (
 from assets.ascii_art import (
     TELEPORT_BEAM_ART
 )
+def visit_archives(game):
+    ...
 def show_cycle_number():
     cycle = random.randint(1, 999999)
 
